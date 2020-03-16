@@ -14,7 +14,7 @@ fixme
 --[=[
     VERSION
 
-        fixme  william.motley@rsa.com  11.5.0.0-10941.5  Initial development
+        fixme  11.5.0.0-10941.5  Initial development
 
 
     OPTIONS
