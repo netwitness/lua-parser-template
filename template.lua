@@ -5,6 +5,11 @@ local PARSERNAME = nw.createParser(parserName, "fixme")
 
 nw.logDebug(parserName .. " " .. parserVersion)
 
+--[=[
+    Mitch: Is there a doc explaining what the "summary" table paramaters mean and what they do in the UI?  
+    Would like to determine which ones are relevant to someone building a custom parser.
+--]=]
+
 local summary = {["parserName"] = parserName, ["parserVersion"] = parserVersion}
 
 summary.parserDetails = [=[
@@ -135,6 +140,12 @@ summary.liveTags = {
 
 local nwll = require('nwll')
 
+--[=[
+    Mitch: I suppose the "--define options" section below does not have anything to do with the XXX_options.lua file?
+    
+    Mitch: Looks like you are defining some things in the UI here, but what does everything else do?
+--]=]
+
 -- define options
     local options = ({
         -- each option needs its own definition
@@ -148,6 +159,15 @@ local nwll = require('nwll')
         }),
     })
 -- set options DON'T MODIFY THIS SECTION
+
+--[=[
+    Mitch: What's your latest guidance on when to use a pcall?
+    
+    Mitch: What would happen if there was no options file here?  Is the parser meant to run without it?
+ 
+    Mitch: What would you do differently if the options file was required (mainly for my own parser use case)?
+--]=]
+
     pcall(function()
         local optionsModule = parserName .. "_options"
         optionsModule = require(optionsModule)
@@ -220,5 +240,15 @@ PARSERNAME:setCallbacks({
     [nwevents.OnStreamBegin] = PARSERNAME.streamBegin,
     ["fixme"] = PARSERNAME.fixme,
 })
+
+--[=[
+    Mitch: at the bottom of the traffic flow parser you have this.  What is it doing?
+
+module('traffic_flow')
+
+function subscribe()
+    return publish
+end
+--]=]
 
 return summary
