@@ -44,5 +44,5 @@ All of the code and instructions here are provided by Bill Motley, the man who l
 
 [A Treatise on Writing Packet Parsers for the RSA NetWitness Platform]: https://community.rsa.com/docs/DOC-41370
 [RSA Link Content Catalog]: https://community.rsa.com/community/products/netwitness/integrations/catalog
-[LICENSE.md]: license.md
+[LICENSE.md]: https://github.com/netwitness/lua-parser-template/blob/master/LICENSE
 [RSA NetWitness Platform Integrations]: https://community.rsa.com/community/products/netwitness/integrations
